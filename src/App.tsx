@@ -4,7 +4,7 @@ import "./App.css";
 import Header from './components/Header'
 import DateTimePicker from './components/DateTimePicker'
 import LocationList from './components/LocationList'
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import ImageContainer from "./components/ImageContainer";
 function App() {
@@ -117,11 +117,21 @@ function App() {
     return (
         <div>
             <Header />
-            <Container >
+            <div style={{ textAlign: 'center', fontSize: '22px', padding: '20px' }}>
                 <DateTimePicker setQueryString={setQueryString} />
-                <LocationList cameraTime={cameraData?.timestamp} camNForecastData={camNForecastData} handleViewClick={handleViewClick} />
-                <ImageContainer chosenLocation={chosenLocation} showWeatherCam={showWeatherCam} />
+            </div>
+            <Container >
+                <Row>
+                    <Col>
+                        <LocationList cameraTime={cameraData?.timestamp} camNForecastData={camNForecastData} handleViewClick={handleViewClick} />
+                    </Col>
+                    <Col>
+                        <ImageContainer chosenLocation={chosenLocation} showWeatherCam={showWeatherCam} />
+                    </Col>
 
+
+
+                </Row>
             </Container>
         </div>
     );

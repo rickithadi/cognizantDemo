@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import { Image } from "react-bootstrap";
 
-const ImageContainer = (props:any) => {
+const ImageContainer = (props: any) => {
     const [locationChosen, setLocationChosen] = useState(false);
     const [imageTime, setImageTime] = useState("");
     let empty: any = {};
