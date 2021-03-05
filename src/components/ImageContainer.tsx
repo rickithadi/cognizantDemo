@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 
 const ImageContainer = (props: any) => {
     const [locationChosen, setLocationChosen] = useState(false);
@@ -49,7 +49,7 @@ const ImageContainer = (props: any) => {
 
     const haveImage = (
         <>
-            <img src={props.chosenLocation.image} id="traffic-cam-image" alt="traffic camera image" />
+            <Image fluid src={props.chosenLocation.image} id="traffic-cam-image" alt="traffic camera image" />
             {/* <Image src={props.chosenLocation.image} fluid alt="traffic camera image" /> */}
         </>
     )
@@ -65,7 +65,7 @@ const ImageContainer = (props: any) => {
 
                 <div className="container-fluid col-sm-12 col-md-7 py-1" id="traffic-cam-image-div">
 
-                    <img  src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.6rf8zongOgK5HLOGV8ih6AHaDt%26pid%3DApi&f=1' id="placeholder" alt="placeholder" />
+                    <Image fluid src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.6rf8zongOgK5HLOGV8ih6AHaDt%26pid%3DApi&f=1' id="placeholder" alt="placeholder" />
                 </div>
             </div>
 
