@@ -9140,6 +9140,11 @@
     "object-assign" "^4.1.1"
     "react-is" "^16.8.1"
 
+"proptypes@^1.1.0":
+  "integrity" "sha1-eLOCilqmuxMIk54N48YETf1L0jk="
+  "resolved" "https://registry.npmjs.org/proptypes/-/proptypes-1.1.0.tgz"
+  "version" "1.1.0"
+
 "proxy-addr@~2.0.5":
   "integrity" "sha512-dh/frvCBVmSsDYzw6n926jv974gddhkFPfiN8hPOi30Wax25QZyZEGveluCgliBnqmuM+UJmBErbAUFIoDbjOw=="
   "resolved" "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.6.tgz"

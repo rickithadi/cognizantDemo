@@ -63,9 +63,12 @@ function App() {
     return (
         <div>
             <Header />
+            <Container >
             <DateTimePicker />
             {/*      <LocationList />
                 <ImageContainer />  */}
+
+            </Container>
         </div>
     );
 }
