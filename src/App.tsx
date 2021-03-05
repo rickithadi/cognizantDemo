@@ -122,10 +122,10 @@ function App() {
             </div>
             <Container >
                 <Row>
-                    <Col>
+                    <Col xs={12} md={8}>
                         <LocationList cameraTime={cameraData?.timestamp} camNForecastData={camNForecastData} handleViewClick={handleViewClick} />
                     </Col>
-                    <Col>
+                    <Col xs={12} md={4}>
                         <ImageContainer chosenLocation={chosenLocation} showWeatherCam={showWeatherCam} />
                     </Col>
 

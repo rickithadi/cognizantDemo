@@ -59,7 +59,17 @@ const ImageContainer = (props: any) => {
     const renderImage = (locationChosen === true) ? haveImage : <></>
 
     const noShow = (
-        <></>
+        <>
+            <div className="container-fluid row">
+                <div className="container-fluid col-sm-12 col-md-5 py-1"><h5 id="details-h5">Choose a camera </h5>                </div >
+
+                <div className="container-fluid col-sm-12 col-md-7 py-1" id="traffic-cam-image-div">
+
+                    <img  src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.6rf8zongOgK5HLOGV8ih6AHaDt%26pid%3DApi&f=1' id="placeholder" alt="placeholder" />
+                </div>
+            </div>
+
+        </>
     )
 
     const showWeatherCamImage = (
