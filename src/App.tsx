@@ -6,6 +6,7 @@ import DateTimePicker from './components/DateTimePicker'
 import LocationList from './components/LocationList'
 import { Container } from "react-bootstrap";
 import axios from "axios";
+import ImageContainer from "./components/ImageContainer";
 function App() {
     const [queryString, setQueryString] = useState("");
     // TS complaining variable doesnt exist on {}. An interface would be a better option
@@ -16,9 +17,7 @@ function App() {
     const [chosenLocation, setChosenLocation] = useState({});
     const [showWeatherCam, setShowWeatherCam] = useState(false);
     useEffect(() => {
-        //setCameraData & setWeatherData
         if (queryString !== "") {
-            //axios API if querystring not empty
             //TODO abstract out calls to api file
             axios
                 .all([
@@ -33,8 +32,7 @@ function App() {
                 ])
                 .then(
                     axios.spread((response1, response2) => {
-                        setCameraData(response1.data.items[0]); //object
-
+                        setCameraData(response1.data.items[0]); //10/10 API design
                         let areaNforecastArray: any = [];
                         const forecast = response2.data.items[0].forecasts; //[{area:"AMK", forecast="Fair"}, {},{}]
                         const area_metadata = response2.data.area_metadata; //[{name:"AMK", label_location:{}}]
@@ -122,6 +120,7 @@ function App() {
             <Container >
                 <DateTimePicker setQueryString={setQueryString} />
                 <LocationList cameraTime={cameraData?.timestamp} camNForecastData={camNForecastData} handleViewClick={handleViewClick} />
+                <ImageContainer chosenLocation={chosenLocation} showWeatherCam={showWeatherCam} />
 
             </Container>
         </div>
