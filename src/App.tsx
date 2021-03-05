@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Header from './components/Header'
+import DateTimePicker from './components/DateTimePicker'
 import { Container } from "react-bootstrap";
 import axios from "axios";
 function App() {
@@ -60,12 +61,12 @@ function App() {
         }
     }, [queryString]);
     return (
-            <div>
-                <Header />
-                  {/* <DateTimePicker />
-                <LocationList />
+        <div>
+            <Header />
+            <DateTimePicker />
+            {/*      <LocationList />
                 <ImageContainer />  */}
-            </div>
+        </div>
     );
 }
 
