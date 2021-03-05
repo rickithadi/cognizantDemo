@@ -60,14 +60,12 @@ function App() {
         }
     }, [queryString]);
     return (
-        <div className="container">
-            <Container>
+            <div>
                 <Header />
                   {/* <DateTimePicker />
                 <LocationList />
                 <ImageContainer />  */}
-            </Container>
-        </div>
+            </div>
     );
 }
 
