@@ -7,8 +7,8 @@ const DateTimePicker = (props: any) => {
         // convert date obj
         const encodedDateTime = startDate && startDate.toISOString()
         // trim :000Z from end on string. im not sure what that is, timezone?
-        console.log(encodedDateTime?.substring(0, encodedDateTime.length-5));
-        props.setQueryString(encodedDateTime && encodedDateTime?.substring(0, encodedDateTime.length-5));
+        console.log(encodedDateTime?.substring(0, encodedDateTime.length - 5));
+        props.setQueryString(encodedDateTime && encodedDateTime?.substring(0, encodedDateTime.length - 5));
     }, [startDate]);
     return (
         <DatePicker selected={startDate} minDate={new Date()} onChange={date => date && setStartDate(date as Date)} timeInputLabel="Time:"
