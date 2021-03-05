@@ -64,8 +64,8 @@ function App() {
         <div>
             <Header />
             <Container >
-            <DateTimePicker />
-            {/*      <LocationList />
+                <DateTimePicker setQueryString={setQueryString} />
+                {/*      <LocationList />
                 <ImageContainer />  */}
 
             </Container>
