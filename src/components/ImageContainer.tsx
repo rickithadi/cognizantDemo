@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Image } from "react-bootstrap";
+import { Image, Container, Row } from "react-bootstrap";
 
 const ImageContainer = (props: any) => {
     const [locationChosen, setLocationChosen] = useState(false);
@@ -59,31 +59,27 @@ const ImageContainer = (props: any) => {
     const renderImage = (locationChosen === true) ? haveImage : <></>
 
     const noShow = (
-        <>
-            <div className="container-fluid row">
-                <div className="container-fluid col-sm-12 col-md-5 py-1"><h5 id="details-h5">Choose a camera </h5>                </div >
+        <Container>
+            <Row><h5 id="details-h5">Choose a camera </h5>                </Row >
 
-                <div className="container-fluid col-sm-12 col-md-7 py-1" id="traffic-cam-image-div">
+            <Row>
 
-                    <Image fluid src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.6rf8zongOgK5HLOGV8ih6AHaDt%26pid%3DApi&f=1' id="placeholder" alt="placeholder" />
-                </div>
-            </div>
+                <Image fluid src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.6rf8zongOgK5HLOGV8ih6AHaDt%26pid%3DApi&f=1' id="placeholder" alt="placeholder" />
+            </Row>
 
-        </>
+        </Container>
     )
 
     const showWeatherCamImage = (
-        <>
-            <div className="container-fluid row">
-                <div className="container-fluid col-sm-12 col-md-5 py-1"><h5 id="details-h5">Details for camera <span className="span">{props.chosenLocation.camera_id}</span></h5>
-                    {renderDetails}
-                </div >
+        <Container>
+            <Row><h5 id="details-h5">Details for camera <span className="span">{props.chosenLocation.camera_id}</span></h5>
+                {renderDetails}
+            </Row >
 
-                <div className="container-fluid col-sm-12 col-md-7 py-1" id="traffic-cam-image-div">
-                    {renderImage}
-                </div>
-            </div>
-        </>
+            <Row>
+                {renderImage}
+            </Row>
+        </Container>
     )
 
 
