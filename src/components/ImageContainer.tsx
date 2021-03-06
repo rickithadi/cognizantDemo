@@ -10,7 +10,7 @@ const ImageContainer = (props: any) => {
     useEffect(() => {
         if (Object.keys(props.chosenLocation).length !== 0) {
             setLocationChosen(true)
-            let formattedDate = new Date(props.chosenLocation.timestamp).toLocaleString("en-AU")
+            let formattedDate = new Date(props.chosenLocation.timestamp).toLocaleString("en-SG")
             setImageTime(formattedDate)
             let newGeo = { "latitude": (props.chosenLocation.location.latitude).toFixed(3), "longitude": (props.chosenLocation.location.longitude).toFixed(3) }
             setGeoLocation(newGeo)
