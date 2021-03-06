@@ -22,46 +22,44 @@ const LocationList = (props: any) => {
     // console.log("locationlist array outside, ", camNForecastData)
 
     return (
-        <div className="container-fluid pt-2" id="location-list-cont">
+        <div className="container-fluid pt-2" id="location-list-cont"   style={{overflowY:'scroll',height:'50vh'}}>
             List of traffic cameras for <span className="span">{dateTimeAcquired}</span>
             {/* table list of S/N, location, camera number */}
 
-            <div className="container-fluid" id="table-cont" >
-                <Table striped bordered hover size="sm">
-                    <thead>
-                        <tr>
-                            <th>S/N</th>
-                            <th>Nearest Area</th>
-                            <th>Camera ID</th>
-                            <th>View</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {loaded ? (
-                            <>
-                                {camNForecastData.map((data: any, index) => (
-                                    <tr key={index}>
-                                        <td>{index + 1}</td>
-                                        <td>{data?.locationName}</td>
-                                        <td>{data?.camera_id}</td>
-                                        <td><Button size="sm"
-                                            onClick={() => {
-                                                // console.log("handle view click", data)
-                                                props.handleViewClick(data);
-                                            }}
-                                            variant="primary"
-                                        >View</Button></td>
-                                    </tr>
+            <Table striped bordered hover size="sm" style={{overflowY:'scroll'}}>
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Nearest Area</th>
+                        <th>Camera ID</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {loaded ? (
+                        <>
+                            {camNForecastData.map((data: any, index) => (
+                                <tr key={index}>
+                                    <td>{index + 1}</td>
+                                    <td>{data?.locationName}</td>
+                                    <td>{data?.camera_id}</td>
+                                    <td><Button size="sm"
+                                        onClick={() => {
+                                            // console.log("handle view click", data)
+                                            props.handleViewClick(data);
+                                        }}
+                                        variant="primary"
+                                    >View</Button></td>
+                                </tr>
 
-                                ))}
-                            </>
-                        ) : (<tr><td>Pick a Date & Time</td></tr>)}
-
+                            ))}
+                        </>
+                    ) : (<tr><td>Pick a Date & Time</td></tr>)}
 
 
-                    </tbody>
-                </Table>
-            </div>
+
+                </tbody>
+            </Table>
         </div>
     )
 }
