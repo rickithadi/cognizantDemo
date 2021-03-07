@@ -11,7 +11,7 @@ const DateTimePicker = (props: any) => {
         props.setQueryString(encodedDateTime && encodedDateTime?.substring(0, encodedDateTime.length - 5));
     }, [startDate]);
     return (
-        <DatePicker selected={startDate} minDate={new Date()} onChange={date => date && setStartDate(date as Date)} timeInputLabel="Time:"
+        <DatePicker selected={startDate} minDate={new Date()} onChange={date => date && setStartDate(date as Date)} showTimeSelect timeInputLabel="Time:"
             dateFormat="MM/dd/yyyy h:mm" />
     )
 }
